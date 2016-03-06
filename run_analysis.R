@@ -42,7 +42,8 @@ merge_df$activity <- factor(merge_df$activity, levels = activity_labels[,1], lab
 head(merge_df[1:5])
 #part 2 of assignment
 #compute the mean on columns 2:X by subject and activity
-aggregate_df <- aggregate(merge_df[, 3:length(merge_df)], by = list(merge_df$subject, merge_df$activity), FUN = mean)
+aggregate_df <- aggregate(merge_df[, 3:length(merge_df)], by = list(merge_df$activity, merge_df$subject), FUN = mean)
+aggregate_df <- aggregate_df[,c(2, 1,3:length(aggregate_df))]
 colnames(aggregate_df)[1] <- "subject"
 colnames(aggregate_df)[2] <- "activity"
 head(aggregate_df[1:5])
