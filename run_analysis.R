@@ -47,4 +47,4 @@ colnames(aggregate_df)[1] <- "subject"
 colnames(aggregate_df)[2] <- "activity"
 head(aggregate_df[1:5])
 setwd(projectRepo)
-write.table(aggregate_df, "tidy.txt")
+write.table(aggregate_df, "tidy.txt",row.names = FALSE)
